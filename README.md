@@ -42,6 +42,48 @@ You can view the live website here: [Live Demo](https://cozy-crisp-b269de.netlif
 - **AOS.js** – Scroll animations  
 
 ---
+````markdown
+![Logo](cp.png)
+
+# Bekmuhammad — Backend Developer Portfolio 💻
+
+Welcome to Bekmuhammad's personal portfolio. This repository contains a lightweight, responsive portfolio website showcasing backend projects, contact details, and deployment information.
+
+---
+
+## Live Demo 🚀
+
+If you've deployed this site, list the live URL here (example): https://www.bekmuhammad.uz
+
+---
+
+## 🌟 Website Sections
+
+- **Home**: Developer introduction with avatar and short description
+- **About**: Experience, tech stack, and contact info
+- **Projects**: Showcase of backend projects with images, descriptions, and tech tags
+- **Services**: Backend, API, and system architecture capabilities
+- **Contact**: Email, Telegram, and social links
+
+---
+
+## ⚡ Features
+
+- Clean & modern UI design
+- Responsive layout optimized for mobile and desktop
+- Project cards with tech tags and links to GitHub / Live Demo / Telegram bots
+- CV download link
+
+---
+
+## 🛠 Technologies Highlight
+
+- Backend: Node.js, NestJS, Express
+- Databases: PostgreSQL, Prisma/TypeORM
+- DevOps: Docker, PM2, Nginx
+- Other: WebSocket, gRPC, Swagger / OpenAPI
+
+---
 
 ## License
 
@@ -49,24 +91,26 @@ This project is licensed under the terms described in the [LICENSE](LICENSE) fil
 
 ---
 
-## 🚀 How to Use / Customize
+## 🚀 How to Deploy
 
-1. **Clone the repository:**
-
- ---
-
-## 📬 Contact
-
-- Email: aminehamzaoui1925@gmail.com   
-- Location: Boumerdès, Algeria  
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamed-amine-hamzaoui-a2453a35b/)  
-- GitHub: [GitHub](https://github.com/Saboo24)  
-- Instagram: [Instagram](https://www.instagram.com/a__m.i.n__e/?utm_source=ig_web_button_share_sheet)
+See `DEPLOY_PM2.md` for a step-by-step guide to deploy this project to an Ubuntu VPS using PM2 and Nginx, or ask me to create a Docker deployment instead.
 
 ---
 
-Made with ❤️ by **Amine Hamzaoui**
+## 📬 Contact
+
+- Email: bekmuhammad.developer@gmail.com
+- Phone: +998900152601
+- Website: https://www.bekmuhammad.uz
+- Telegram: https://t.me/Khamidov_online
+- GitHub: https://github.com/Bekmuhammad-Devoloper
+
+---
+
+Made with ❤️ by **Bekmuhammad Shokirjonov**
 
 
 ```bash
-git clone https://github.com/Saboo24/portofolio8.git
+git clone https://github.com/Bekmuhammad-Devoloper/Partfolio.git
+
+````
