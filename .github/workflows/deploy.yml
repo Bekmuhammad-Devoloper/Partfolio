@@ -1,0 +1,49 @@
+name: Deploy Portfolio to VPS
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'porotofilo8/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            # Portfolio katalogiga o'tish
+            cd /tmp
+            
+            # Eski clone bo'lsa o'chirish
+            rm -rf Partfolio
+            
+            # Yangi clone qilish
+            git clone https://github.com/Bekmuhammad-Devoloper/Partfolio.git
+            
+            # Fayllarni /var/www/portfolio ga sync qilish
+            rsync -av --delete Partfolio/porotofilo8/ /var/www/portfolio/
+            
+            # Huquqlarni sozlash
+            chown -R www-data:www-data /var/www/portfolio
+            chmod -R 755 /var/www/portfolio
+            
+            # Nginx reload (agar kerak bo'lsa)
+            nginx -t && systemctl reload nginx
+            
+            # Tozalash
+            rm -rf /tmp/Partfolio
+            
+            echo "✅ Portfolio deployed successfully!"
