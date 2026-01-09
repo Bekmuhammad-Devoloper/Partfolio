@@ -41,29 +41,33 @@ rsync -a --delete "$TMPDIR/porotofilo8/" "$APP_DIR/"
 chown -R www-data:www-data "$APP_DIR"
 chmod -R 755 "$APP_DIR"
 
-# Create nginx site config
+# Create nginx site config (use quoted heredoc to avoid shell variable expansion like $uri)
 NGINX_CONF="/etc/nginx/sites-available/portfolio"
-cat > "$NGINX_CONF" <<EOF
+cat > "$NGINX_CONF" <<'EOF'
 server {
-    listen 80;
-    server_name $DOMAIN www.$DOMAIN;
+  listen 80;
+  server_name %DOMAIN% www.%DOMAIN%;
 
-    root $APP_DIR;
-    index index.html index.htm;
+  root %APP_DIR%;
+  index index.html index.htm;
 
-    location / {
-        try_files $uri $uri/ =404;
-    }
+  location / {
+    try_files $uri $uri/ =404;
+  }
 
-    location ~* \.(?:manifest|appcache|html?|xml|json)$ {
-        add_header Cache-Control "no-cache, no-store, must-revalidate";
-    }
+  location ~* \.(?:manifest|appcache|html?|xml|json)$ {
+    add_header Cache-Control "no-cache, no-store, must-revalidate";
+  }
 
-    location ~* \.(?:css|js|svg|png|jpg|jpeg|gif|ico|webp)$ {
-        add_header Cache-Control "public, max-age=31536000, immutable";
-    }
+  location ~* \.(?:css|js|svg|png|jpg|jpeg|gif|ico|webp)$ {
+    add_header Cache-Control "public, max-age=31536000, immutable";
+  }
 }
 EOF
+
+# Replace placeholders with real values (safe, avoids shell expansion issues)
+sed -i "s|%DOMAIN%|$DOMAIN|g" "$NGINX_CONF"
+sed -i "s|%APP_DIR%|$APP_DIR|g" "$NGINX_CONF"
 
 ln -sf "$NGINX_CONF" /etc/nginx/sites-enabled/portfolio
 nginx -t && systemctl reload nginx
