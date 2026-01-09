@@ -1593,3 +1593,241 @@ hr {
   }
 }
 
+/* ===== IMPROVED MOBILE STYLES ===== */
+
+/* Tablet & Small Desktop */
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .left {
+    order: 2;
+  }
+  
+  .right {
+    order: 1;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .desc {
+    max-width: 100%;
+  }
+  
+  .buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .site-link {
+    justify-content: center;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 600px) {
+  #intro {
+    padding: 10px;
+    min-height: 100vh;
+  }
+  
+  .main {
+    width: 100%;
+  }
+  
+  .card {
+    padding: 20px 15px;
+    border-radius: 18px;
+  }
+  
+  .top-tags {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .top-tags span {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+  
+  .content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .left h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  
+  .left h1 br {
+    display: none;
+  }
+  
+  .desc {
+    font-size: 13px;
+    margin: 15px 0;
+  }
+  
+  .live-line span {
+    font-size: 10px;
+  }
+  
+  .buttons {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .btn {
+    font-size: 11px;
+    padding: 8px 14px;
+  }
+  
+  .site-link {
+    font-size: 12px;
+    padding: 8px 16px;
+    margin-top: 15px;
+  }
+  
+  .right {
+    width: 100%;
+    max-width: 280px;
+    padding: 20px;
+    margin: 0 auto;
+  }
+  
+  .right-head {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .orbit-box {
+    width: 180px;
+    height: 180px;
+    transform: scale(0.8);
+    margin: 0 auto;
+  }
+  
+  .core span {
+    font-size: 12px;
+  }
+  
+  .stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .stats div {
+    min-width: 80px;
+  }
+  
+  .stats h4 {
+    font-size: 20px;
+  }
+  
+  .stats p {
+    font-size: 9px;
+  }
+  
+  /* Projects Cards Mobile */
+  .projects-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .project-card {
+    padding: 15px;
+  }
+  
+  .project-card img {
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .project-card h3 {
+    font-size: 16px;
+    margin: 10px 0 8px;
+  }
+  
+  .project-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .project-card .skills {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0;
+  }
+  
+  .project-card .skills a {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  
+  .project-card .btn {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+  
+  /* Services Grid Mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
+  
+  /* Contact Section Mobile */
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact-form {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 380px) {
+  .card {
+    padding: 15px 10px;
+  }
+  
+  .left h1 {
+    font-size: 22px;
+  }
+  
+  .desc {
+    font-size: 12px;
+  }
+  
+  .btn {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+  
+  .orbit-box {
+    transform: scale(0.65);
+  }
+  
+  .project-card img {
+    height: 120px;
+  }
+}
+
+
